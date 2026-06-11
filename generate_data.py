@@ -1,12 +1,14 @@
 import mysql.connector
 import random   #Generating the random data 
-
+import os
+from dotenv import load_model, load_dotenv
+load_dotenv()
 try:
     # 1. Connection object taiyar karo
     mydb = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="157565",
+        password=os.getenv("DB_PASSWORD"),
         database="bnpl_db"
     )
     
